@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TicketBookingApplication {
 	/*
-	Test method
+	Test method added
 	 */
 	public static void main(String[] args) {
 		SpringApplication.run(TicketBookingApplication.class, args);
