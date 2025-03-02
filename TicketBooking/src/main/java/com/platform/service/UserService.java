@@ -1,7 +1,8 @@
 package com.platform.service;
 
-import com.platform.entity.Users;
+import com.platform.entity.User;
 import com.platform.repository.UserRepo;
+import com.platform.request.UserRequest;
 import com.platform.response.UserResponse;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +20,14 @@ public class UserService {
     private ModelMapper mapper;
 
     public UserResponse getUserById(Integer id) {
-        Optional<Users> user = userRepo.findById(id);
-        UserResponse userResponse = mapper.map(user, UserResponse.class);
-        return userResponse;
+        Optional<User> user = userRepo.findById(id);
+        return mapper.map(user, UserResponse.class);
     }
+
+    public User addUser(UserRequest userRequest) {
+        User user = new User(userRequest.getName(), userRequest.getEmail(),userRequest.getPassword());
+        return userRepo.save(user);
+    }
+
 
 }

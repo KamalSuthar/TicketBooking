@@ -1,9 +1,6 @@
 package com.platform.response;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,12 +8,13 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class UserResponse {
 
-    private int UserID;
-    private String Name;
-    private String Email;
-    //private String Password_Hash;
+    private int userID;
+    private String name;
+    private String eMail;
+    private String password;
 
 
 }
