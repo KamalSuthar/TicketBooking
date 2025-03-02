@@ -22,6 +22,10 @@ public class Show {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long showId;
 
+    private LocalDate showDate;
+    private LocalTime showTime;
+    private BigDecimal price;
+
     @ManyToOne
     @JoinColumn(name = "TheatreID", nullable = false)
     private Theatre theatre;
@@ -30,12 +34,5 @@ public class Show {
     @JoinColumn(name = "MovieID", nullable = false)
     private Movie movie;
 
-    private LocalDate showDate;
-    private LocalTime showTime;
-    private BigDecimal price;
-
-    @Column(updatable = false)
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
 
 }

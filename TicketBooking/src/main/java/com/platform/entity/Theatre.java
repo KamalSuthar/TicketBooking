@@ -26,10 +26,6 @@ public class Theatre {
     private String contactEmail;
     private String contactPhone;
 
-    @Column(updatable = false)
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
-
     @OneToMany(mappedBy = "theatre", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Show> shows;
 }
